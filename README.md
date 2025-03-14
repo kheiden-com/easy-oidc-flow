@@ -59,6 +59,10 @@ This Flask context wrapper overrides the following REST routes:
 
 Make sure that your flask app doesn't define these routes, otherwise an error will be thrown.
 
+## PyPi
+
+https://pypi.org/project/easy_oidc_flow/
+
 ## References
 
 https://developers.google.com/identity/openid-connect/openid-connect#discovery
