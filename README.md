@@ -22,14 +22,18 @@ if __name__ in "__main__":
 
 ## Quickstart
 
-Create a .env file using the .env.template file as a template. Populate with your OAuth Client details (see below)
+1) Create a .env file using the .env.template file as a template. Populate with your OAuth Client details (see below)
 
-Run the example server implementation with the following:
+2) Run the example server implementation with the following:
 
 ```bash
 
 uv run --env-file=.env .\example_server.py
 ```
+
+3) Navigate to `http://localhost:8000/`
+4) Follow through the OAuth flow
+5) Congrats! You are now successfully authorized.
 
 ## IDP Configuration
 
