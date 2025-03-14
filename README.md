@@ -59,6 +59,10 @@ This Flask context wrapper overrides the following REST routes:
 
 Make sure that your flask app doesn't define these routes, otherwise an error will be thrown.
 
+## Contributing
+
+Please open an issue or pull request if you find any bugs, have a feature request, or would like to contribute!
+
 ## PyPi
 
 https://pypi.org/project/easy_oidc_flow/
