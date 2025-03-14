@@ -4,7 +4,6 @@ This python library is designed to be an easy drop in which handles OIDC authent
 authorization, and the OAuth flow.
 
 ## Example Implementation
-
 ```python
 from flask import Flask, request
 from easy_oidc_flow import EasyOIDCFlow
@@ -21,13 +20,18 @@ if __name__ in "__main__":
 
 
 ## Quickstart
+Note: This example uses `uv` but this package can be used via native `pip` or other package managers which work with pypi.
+
+0) To get started, install the package:
+```
+uv run pip install easy_oidc_flow
+```
 
 1) Create a .env file using the .env.template file as a template. Populate with your OAuth Client details (see below)
 
 2) Run the example server implementation with the following:
 
 ```bash
-
 uv run --env-file=.env .\example_server.py
 ```
 
@@ -40,7 +44,8 @@ uv run --env-file=.env .\example_server.py
 ### Google Cloud Platform
 0) Create a GCP Project
 1) Navigate to https://console.cloud.google.com/auth/clients/
-2) Create a Web Application OAuth Client ID
+2) Create a Web Application OAuth Client ID. Make sure to configure the redirect URI to `http://localhost:8000/callback`
+
 3) Download the OAuth client id .json file
 4) Copy .env to .env.template and fill out the client id and client secret from the downloaded OAuth .json file
 5) Delete the .json file from your system
@@ -52,7 +57,7 @@ This Flask context wrapper overrides the following REST routes:
 `/login`
 `/callback`
 
-So make sure that your flask app doesn't define these routes, or an error will be thrown.
+Make sure that your flask app doesn't define these routes, otherwise an error will be thrown.
 
 ## References
 
