@@ -11,6 +11,17 @@ from requests_oauthlib import OAuth2Session
 
 class EasyOIDCFlow(Flask):
   def __init__(self, context):
+    envvars_not_set = []
+    for envvar in [
+      "IDP_WELL_KNOWN_URL",
+      "IDP_CLIENT_ID",
+      "IDP_CLIENT_SECRET",
+      "IDP_OIDC_SCOPES",
+      ]:
+      if os.environ.get(envvar) is None:
+        envvars_not_set.append(envvar)
+    if len(envvars_not_set) != 0:
+      raise Exception(f"Please set the following environment variables: {envvars_not_set}")
     super().__init__(context.import_name)
     self.config["SECRET_KEY"] = str(uuid4())
 
